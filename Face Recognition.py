@@ -55,4 +55,4 @@ models = [('Logistic Regression', LogisticRegression()), ('Support Vector Machin
 for name, model in models:
     kfold = KFold(n_splits=5, shuffle=True, random_state=0)
     cv_score = cross_val_score(model, X_pca, targets, cv=kfold)
-    print("Mean of the cross-validation score: %s" % cv_score.mean())
+    print(name, "- Mean of the cross-validation score: %s" % cv_score.mean())
